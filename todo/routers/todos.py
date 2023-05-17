@@ -1,8 +1,8 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, Path, status
 from sqlalchemy.orm import Session
-from models import Todos
-from schema import TodoList
+from todo.models import Todos
+from todo.schema import TodoList
 
 from database import SessionLocal
 

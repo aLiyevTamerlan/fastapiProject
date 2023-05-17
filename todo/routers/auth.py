@@ -3,8 +3,8 @@ from typing import Annotated
 from fastapi import FastAPI, APIRouter, Depends, HTTPException, Path, status
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from models import Users
-from .todos import get_db
+from todo.models import Users
+from todo.routers.todos import get_db
 from passlib.context import CryptContext
 from jose import jwt
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
@@ -31,10 +31,6 @@ class CreateUserRequest(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
-
-
-
-
 
 db_dependency = Annotated[Session, Depends(get_db)]
 
