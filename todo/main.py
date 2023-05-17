@@ -1,4 +1,4 @@
-import models
+from todo import models
 
 from fastapi import FastAPI
 from database import engine
